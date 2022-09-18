@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:47:47 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/17 12:22:38 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/18 14:56:09 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PHONEBOOK_H
 
 # include "Contact.hpp"
+# include <string.h>
+# include <string>
+
 class PhoneBook{
 
 public:
@@ -23,9 +26,12 @@ public:
 		PhoneBook(void);
 		~PhoneBook(void);
 		void	display_contacts(void);
+		void	showContact(void);
+		void	addContact(void);
 
-	private : 
-		Contact	contacts[8];
+	private :
+		int		_number;
+		Contact	_contacts[8];
 
 };
 
