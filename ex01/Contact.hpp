@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:45:44 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/17 12:36:58 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/17 13:29:39 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ public:
 	public :
 		Contact(void);
 		~Contact(void);
-		void	print_id();
-		void	set_id(int id);
+		void	print();
+		void	set_value(int id);
 
 	private :
 		int			index;
