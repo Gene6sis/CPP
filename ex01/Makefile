@@ -1,24 +1,29 @@
 SRCS			=	Contact.cpp PhoneBook.cpp main.cpp
 OBJS			= 	${SRCS:.cpp=.o}
+DEPS			= 	${SRCS:.cpp=.d}
 NAME			= 	phonebook
 CC				=	c++
 RM				=	rm -f
-CFLAGS			=	-Wall -Wextra -Werror -std=c++98
+CFLAGS			=	-Wall -Wextra -Werror -MMD -MP -std=c++98
 
 all:		$(NAME)
 
 .cpp.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
+			${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o} 
 
-$(NAME):	${OBJS}
+-include: $(DEPS)
+
+$(NAME):	${OBJS} $(DEPS)
 			$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} $(DEPS)
 
 fclean:		clean
 			${RM} ${NAME}
 
-re:			fclean all
+re:			fclean
+			make all
+
 
 .PHONY:		all clean fclean re

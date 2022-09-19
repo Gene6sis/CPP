@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 23:45:44 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/18 16:09:09 by adben-mc         ###   ########.fr       */
+/*   Created: 2022/09/19 14:04:45 by adben-mc          #+#    #+#             */
+/*   Updated: 2022/09/19 15:31:48 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CONTACT_H
 # define CONTACT_H
@@ -29,6 +30,7 @@ public:
 		int		set_nickname(std::string name);
 		int		set_secret(std::string name);
 		int		set_phone(std::string name);
+		void	printinfo(void);
 
 	private :
 		int			_index;
@@ -37,7 +39,6 @@ public:
 		std::string	_nickname;
 		std::string _secret;
 		std::string _phone;
-
 };
 
 #endif

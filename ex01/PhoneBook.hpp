@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:47:47 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/18 14:56:09 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/19 12:47:17 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Contact.hpp"
 # include <string.h>
 # include <string>
+# include <cstdlib>
 
 class PhoneBook{
 
