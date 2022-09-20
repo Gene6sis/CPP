@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:47:47 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 14:22:23 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/20 22:21:21 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@
 # include <cstdlib>
 
 class PhoneBook{
-
-public:
-
 
 	public :
 		PhoneBook(void);
