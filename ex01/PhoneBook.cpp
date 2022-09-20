@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 23:51:08 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/19 15:48:16 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/20 14:43:42 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ void	PhoneBook::showContact(void){
 	int digit;
 	int error;
 
+	system("clear");
 	std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 	for (int i = 0; i < _number; i++)
 		_contacts[i].print(i + 1);
@@ -142,6 +143,7 @@ void	PhoneBook::showContact(void){
 		std::cout << "No contact registered" << std::endl << std::endl;
 		return ;
 	}
+	std::cout << std::endl;
 	while (!std::cin.eof())
 	{
 		error = 0;
@@ -151,7 +153,7 @@ void	PhoneBook::showContact(void){
 			return ;
 		if (str.empty())
 		{
-			std::cerr << "Empty first name" << std::endl;
+			std::cerr << "Empty id" << std::endl;
 			continue ;
 		}
 		if (str.length() > 1)
@@ -186,4 +188,16 @@ void	PhoneBook::showContact(void){
 	system("clear");
 	_contacts[digit - 1].printinfo();
 	std::cout << std::endl;
+}
+
+void	PhoneBook::fill(void){
+	for (int i = 0; i < 8; i++)
+	{
+		_contacts[i].set_first("adben-mc");
+		_contacts[i].set_last("ben-mc");
+		_contacts[i].set_nickname("Tchoupi");
+		_contacts[i].set_phone("0606060606");
+		_contacts[i].set_secret("Je n'ai jamais regarde Tchoupi");
+		_number++;
+	}
 }
