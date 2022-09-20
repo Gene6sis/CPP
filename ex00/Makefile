@@ -20,6 +20,6 @@ fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean
-			all
+			make all
 
 .PHONY:		all clean fclean re
