@@ -1,36 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 23:47:47 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 22:28:33 by adben-mc         ###   ########.fr       */
+/*   Created: 2022/09/20 22:15:26 by adben-mc          #+#    #+#             */
+/*   Updated: 2022/09/20 22:18:07 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include "Zombie.hpp"
 
-# include "Contact.hpp"
-# include <string>
-# include <cstdlib>
-
-class PhoneBook{
-
-	public :
-		PhoneBook(void);
-		~PhoneBook(void);
-		void	display_contacts(void);
-		void	showContact(void);
-		void	addContact(void);
-		void	fill(void);
-
-	private :
-		int		_number;
-		Contact	_contacts[8];
-
-};
-
-#endif

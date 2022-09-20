@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 12:03:01 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 14:44:55 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/20 22:28:26 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 int main(int argc, char **argv)
 {
 	PhoneBook Book;
+
 	
 	if (argc > 1)
 	{
-		if (strcmp(argv[1], "fill"))
+		std::string str(argv[1]);
+		if (str.compare("fill"))
 			return (0);
 		Book.fill();
 	}
