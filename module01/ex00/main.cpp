@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 22:15:36 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 22:24:47 by adben-mc         ###   ########.fr       */
+/*   Created: 2022/09/20 22:17:29 by adben-mc          #+#    #+#             */
+/*   Updated: 2022/09/22 20:39:55 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "Zombie.hpp"
 
-# include <iostream>
+int	main()
+{
+	// Stack
+	Zombie	bob = Zombie("Bob");
+	bob.announce();
 
-class Zombie{
+	// Heap
+	Zombie	*sponge = newZombie("Sponge");
+	sponge->announce();
+	delete(sponge);
 
-	public :
-		Zombie(void);
-		~Zombie(void);
-
-	private :
-
-};
-
-
-#endif
+	// Stack
+	randomChump("SpongeBob");
+}

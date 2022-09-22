@@ -6,9 +6,13 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 22:15:26 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 22:18:07 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/22 20:34:56 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
+Zombie* newZombie(std::string name)
+{
+	return (new Zombie(name));
+}
