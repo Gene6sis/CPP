@@ -5,12 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/20 22:15:34 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/22 20:59:22 by adben-mc         ###   ########.fr       */
+/*   Created: 2022/09/22 20:44:25 by adben-mc          #+#    #+#             */
+/*   Updated: 2022/09/22 20:59:25 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
+Zombie::Zombie()
+{
+	_name = "name";
+}
 
 Zombie::Zombie(std::string name)
 {
@@ -25,4 +30,9 @@ Zombie::~Zombie()
 void	Zombie::announce()
 {
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::set_name(std::string name)
+{
+	_name = name;
 }
