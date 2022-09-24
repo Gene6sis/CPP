@@ -1,6 +1,6 @@
 SRCS			=	main.cpp Harl.cpp
 OBJS			= 	${SRCS:.cpp=.o}
-NAME			= 	brainz
+NAME			= 	harl
 CC				=	c++
 RM				=	rm -f
 CFLAGS			=	-Wall -Wextra -Werror -std=c++98
