@@ -6,27 +6,26 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 00:52:24 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/02 19:38:15 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/02 19:46:47 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-
 ScavTrap::ScavTrap(void){
 	std::cout << "Constuctor void Scav called" << std::endl;
 	_name = "Unknown";
-	_hit_point = 10;
-	_energy_point = 10;
-	_attack_damage = 0;
+	_hit_point = 100;
+	_energy_point = 50;
+	_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name){
 	std::cout << "Constuctor string Scav called" << std::endl;
 	_name = name;
-	_hit_point = 10;
-	_energy_point = 10;
-	_attack_damage = 0;
+	_hit_point = 100;
+	_energy_point = 50;
+	_attack_damage = 20;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &trap){
