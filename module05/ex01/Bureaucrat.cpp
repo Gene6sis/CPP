@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
@@ -102,6 +103,19 @@ void	Bureaucrat::increase(int i)
 void	Bureaucrat::increase(void)
 {
 	increase(1);
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << _name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "\e[0;31m" << _name << " couldn't sign " << form.getName() << " because: " << e.what() << "\e[0m" << std::endl;
+	}
 }
 
 /*

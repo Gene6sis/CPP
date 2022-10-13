@@ -3,6 +3,10 @@
 
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
+
+class Form;
+class Bureaucrat;
 
 class Form
 {
@@ -11,11 +15,17 @@ class Form
 
 		Form();
 		Form( Form const & src );
+		Form(std::string name, int signe, int exec);
 		~Form();
 
 		// Form &		operator=( Form const & rhs );
 
-		std::string	
+		const std::string getName() const;
+		bool		isSigned() const;
+		int			getGradeSign() const;
+		int			getGradeExec() const;
+
+		void		beSigned(Bureaucrat bureaucrat);
 
 		class GradeTooHighException: public std::exception {
 			virtual const char* what() const throw();
