@@ -7,27 +7,37 @@
 
 Bureaucrat::Bureaucrat() : _name("Name")
 {
-	std::cout << "Constructor Bureaucrat " << _name << std::endl;
+	// std::cout << "Constructor Bureaucrat " << _name << std::endl;
 	_grade = 150;
 }
 
 Bureaucrat::Bureaucrat(std::string name) : _name(name)
 {
-	std::cout << "Constructor name Bureaucrat " << _name << std::endl;
+	// std::cout << "Constructor name Bureaucrat " << _name << std::endl;
 	_grade = 1;
 }
 
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "Constructor grade Bureaucrat " << _name << std::endl;
-	_grade = grade;
+	// std::cout << "Constructor grade Bureaucrat " << _name << std::endl;
+	if (grade < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		_grade = grade;
 }
 
 Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src.getName())
 {
-	std::cout << "Constructor copy Bureaucrat " << _name << std::endl;
-	_grade = src.getGrade();
+	// std::cout << "Constructor copy Bureaucrat " << _name << std::endl;
+	if (src.getGrade() < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else if (src.getGrade() > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else 
+		_grade = src.getGrade();
 }
 
 /*
@@ -36,7 +46,7 @@ Bureaucrat::Bureaucrat( const Bureaucrat & src ) : _name(src.getName())
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destructor Bureaucrat " << _name << std::endl;
+	// std::cout << "Destructor Bureaucrat " << _name << std::endl;
 }
 
 /*
@@ -107,6 +117,7 @@ void	Bureaucrat::increase(void)
 
 void	Bureaucrat::signForm(Form &form)
 {
+	// (void)form;
 	try
 	{
 		form.beSigned(*this);

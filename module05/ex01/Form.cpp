@@ -11,11 +11,19 @@ Form::Form() : _name("name"), _grade_sign(1), _grade_exec(1)
 
 Form::Form(std::string name, int signe, int exec) : _name(name), _grade_sign(signe), _grade_exec(exec)
 {
+	if (signe < 1 || exec < 1)
+		throw Form::GradeTooHighException();
+	else if (signe > 150 || exec > 150)
+		throw Form::GradeTooLowException();
 	_signed = false;
 }
 
 Form::Form( const Form & src ) : _name(src.getName()), _grade_sign(src.getGradeSign()), _grade_exec(src.getGradeExec())
 {
+	if (_grade_sign < 1 || _grade_exec < 1)
+		throw Form::GradeTooHighException();
+	else if (_grade_sign > 150 || _grade_exec > 150)
+		throw Form::GradeTooLowException();
 	_signed = src.isSigned();
 }
 
@@ -63,7 +71,7 @@ int			Form::getGradeExec() const{
 
 void		Form::beSigned(Bureaucrat bureaucrat){
 	if (isSigned())
-		std::cerr << getName() << " Form is already signed" << std::endl;
+		throw Form::AlreadySigned();
 	else if (bureaucrat.getGrade() <= _grade_sign)
 		_signed = true;
 	else
@@ -87,6 +95,11 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return "The grade is too low";
+}
+
+const char* Form::AlreadySigned::what() const throw()
+{
+	return "The form is already signed";
 }
 
 /* ************************************************************************** */

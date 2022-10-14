@@ -1,37 +1,74 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:23:11 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 23:46:42 by adben-mc         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+// #include "Form.hpp"
+
+// int main(){
+
+//     // CASE 1 : error -> instance avec un grade trop haut
+
+//     // std::cout << GREEN << " ERROR INIT CASE: " << WHITE << std::endl;
+//     // try
+//     // {
+//     //    Form a(155, 1, "Reverse Calvitie Form");
+//     // }
+//     // catch(const std::exception& e)
+//     // {
+//     //     std::cout << BRED << "ERROR: "<< e.what() << WHITE<< '\n';
+//     // }
+    
+    
+//     // try
+//     // {
+//     //    Form a(15, -1, "Reverse Calvitie Form");
+//     // }
+//     // catch(const std::exception& e)
+//     // {
+//     //     std::cout << BRED << "ERROR: "<< e.what() << WHITE<< '\n';
+//     // }
+//     //----------------------------------------------------//
+
+//     // CASE 2: -> init, use des fonctions et cas derreur
+
+//     Bureaucrat president("Adnan le bg", 1);
+//     Bureaucrat noob("le ptit nouveau", 148);
+
+//     Form a(5,2, "quadrillerLaZone");
+//     Form quadrillerLaZone(a);
+
+//     std::cout << '\n' << quadrillerLaZone << std::endl;
+
+//     try {
+//         quadrillerLaZone.beSigned(noob);
+//     }
+//     catch(const std::exception& e) {
+//          std::cout <<  "ERROR: "<< e.what() << "\n\n";
+//         try {
+//             noob.signForm(quadrillerLaZone);
+//             std::cout << '\n';
+//         }
+//         catch(const std::exception& e) {
+//             std::cout <<  "ERROR: "<< e.what() << '\n';
+//         }
+//     }
+//     std::cout << quadrillerLaZone << std::endl;
+     
+
+// }
+
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main()
 {
 	{
-		std::cout << "\e[0;33m===== Basic test =====\e[0m" << std::endl;
-		Bureaucrat george = Bureaucrat("George", 35);
-		std::cout << george << std::endl;
-		george.increase();
-		std::cout << george << std::endl;
-		george.increase(10);
-		std::cout << george << std::endl;
-		george.decrease();
-		std::cout << george << std::endl;
-		george.decrease(10);
-		std::cout << george << std::endl;
+		std::cout << "===== Basic test =====" << std::endl;
+		Form form = Form("Super form", 42, 41);
+		std::cout << form << std::endl;
 	}
 	{
-		std::cout << "\e[0;33m===== Constructor test =====\e[0m" << std::endl;
+		std::cout << "===== Exceptions test =====" << std::endl;
 		try
 		{
-			Bureaucrat george = Bureaucrat("George", 35);
+			Form form = Form("Super form", 42, 42);
 			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
 		}
 		catch(const std::exception& e)
@@ -40,7 +77,7 @@ int	main()
 		}
 		try
 		{
-			Bureaucrat george = Bureaucrat("George", 1);
+			Form form = Form("Super form", 0, 42);
 			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
 		}
 		catch(const std::exception& e)
@@ -49,7 +86,7 @@ int	main()
 		}
 		try
 		{
-			Bureaucrat george = Bureaucrat("George", 150);
+			Form form = Form("Super form", 42, 0);
 			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
 		}
 		catch(const std::exception& e)
@@ -58,7 +95,7 @@ int	main()
 		}
 		try
 		{
-			Bureaucrat george = Bureaucrat("George", 0);
+			Form form = Form("Super form", 164, 42);
 			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
 		}
 		catch(const std::exception& e)
@@ -67,7 +104,7 @@ int	main()
 		}
 		try
 		{
-			Bureaucrat george = Bureaucrat("George", 167);
+			Form form = Form("Super form", 42, 164);
 			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
 		}
 		catch(const std::exception& e)
@@ -76,69 +113,92 @@ int	main()
 		}
 	}
 	{
-		std::cout << "\e[0;33m===== Increment test =====\e[0m" << std::endl;
-		Bureaucrat george = Bureaucrat("George", 2);
-		try
+		std::cout << "===== BeSigned test =====" << std::endl;
 		{
-			george.increase();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 40);
+			std::cout << george << std::endl;
+			try
+			{
+				form.beSigned(george);
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			}
+			std::cout << form << std::endl;
 		}
-		catch(const std::exception& e)
+		std::cout << "----- Test 2 -----" << std::endl; 
 		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 45);
+			std::cout << george << std::endl;
+			try
+			{
+				form.beSigned(george);
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			}
+			std::cout << form << std::endl;
 		}
-		std::cout << george << std::endl;
-		try
+		std::cout << "----- Test 3 -----" << std::endl; 
 		{
-			george.increase();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
-		}
-		std::cout << george << std::endl;
-		try
-		{
-			george.increase();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 40);
+			std::cout << george << std::endl;
+			try
+			{
+				form.beSigned(george);
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			}
+			std::cout << form << std::endl;
+			try
+			{
+				form.beSigned(george);
+			}
+			catch(const std::exception& e)
+			{
+				std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			}
+			std::cout << form << std::endl;
 		}
 	}
 	{
-		std::cout << "\e[0;33m===== Decrement test =====\e[0m" << std::endl;
-		Bureaucrat george = Bureaucrat("George", 149);
-		try
+		std::cout << "===== Sign test =====" << std::endl;
 		{
-			george.decrease();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 40);
+			std::cout << george << std::endl;
+			george.signForm(form);
+			std::cout << form << std::endl;
 		}
-		catch(const std::exception& e)
+		std::cout << "----- Test 2 -----" << std::endl; 
 		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 45);
+			george.signForm(form);
+			std::cout << form << std::endl;
 		}
-		std::cout << george << std::endl;
-		try
+		std::cout << "----- Test 3 -----" << std::endl; 
 		{
-			george.decrease();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
-		}
-		std::cout << george << std::endl;
-		try
-		{
-			george.decrease();
-			std::cout << "\e[0;32mWorked !\e[0m" << std::endl;
-		}
-		catch(const std::exception& e)
-		{
-			std::cout << "\e[0;31mError: " << e.what() << "\e[0m" << std::endl;;
+			Form form = Form("Super form", 42, 42);
+			std::cout << form << std::endl;
+			Bureaucrat george = Bureaucrat("George", 40);
+			std::cout << george << std::endl;
+			george.signForm(form);
+			std::cout << form << std::endl;
+			george.signForm(form);
+			std::cout << form << std::endl;
 		}
 	}
 }
