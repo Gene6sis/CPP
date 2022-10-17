@@ -1,4 +1,4 @@
-SRCS			=	main.cpp Data.cpp
+SRCS			=	main.cpp Base.cpp
 OBJS			= 	${SRCS:.cpp=.o}
 NAME			= 	convert
 CC				=	c++
