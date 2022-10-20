@@ -1,9 +1,9 @@
-SRCS			=	main.cpp
+SRCS			=	main.cpp Span.cpp
 OBJS			= 	${SRCS:.cpp=.o}
 NAME			= 	template
 CC				=	c++
 RM				=	rm -f
-CFLAGS			=	-Wall -Wextra -Werror -std=c++98
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -g
 
 all:		$(NAME)
 
