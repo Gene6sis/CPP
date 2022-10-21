@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 19:43:55 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/02 19:49:22 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/21 18:14:27 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : ClapTrap {
+class FragTrap : public ClapTrap {
 
 	public :
 		FragTrap(void);
