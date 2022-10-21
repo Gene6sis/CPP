@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:06:23 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/02 00:48:04 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 01:31:39 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ class ClapTrap {
 		void beRepaired(unsigned int amount);
 		ClapTrap operator=(ClapTrap const &rhs);
 
+		std::string getName(void) const;
+		int			getPv(void) const;
+		int			getEnergy(void) const;
+		int			getAttack(void) const;
+		
 
 	private : 
 		std::string	_name;

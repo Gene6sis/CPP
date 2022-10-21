@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:06:11 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/21 19:04:57 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 01:38:12 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ ClapTrap::ClapTrap(std::string name){
 
 ClapTrap::ClapTrap(ClapTrap const &trap){
 	std::cout << "Constuctor copy Clap called" << std::endl;
-	*this=trap;
+	this->_name = trap.getName();
+	this->_hit_point = trap.getPv();
+	this->_energy_point = trap.getEnergy();
+	this->_attack_damage = trap.getAttack();
 }
 
 ClapTrap::~ClapTrap(void){
@@ -55,7 +58,6 @@ void ClapTrap::attack(const std::string &target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
-	// std::cout << "ClapTrap " << _name << " health : " << _hit_point << std::endl;
 	if (_hit_point <= 0)
 	{
 		std::cout <<  "ClapTrap " << _name << " can't take damage when he is already dead" << std::endl;
@@ -67,7 +69,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 		std::cout <<  "ClapTrap " << _name << " died" << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << _name << " takes " << amount << " damage(s)" << std::endl;
+	std::cout <<  "ClapTrap " << _name << " takes " << amount << " damage(s)" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
@@ -87,15 +89,25 @@ void ClapTrap::beRepaired(unsigned int amount){
 	_energy_point -= 1;
 }
 
+std::string ClapTrap::getName() const {
+	return (_name);
+}
+
+int ClapTrap::getPv() const {
+	return (_hit_point);
+}
+int ClapTrap::getEnergy() const {
+	return (_energy_point);
+}
+int ClapTrap::getAttack() const {
+	return (_attack_damage);
+}
 
 ClapTrap	ClapTrap::operator=(ClapTrap const & rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &rhs)
-	{
-		this->_name = rhs._name;
-		this->_hit_point = rhs._hit_point;
-		this->_energy_point = rhs._energy_point;
-		this->_attack_damage = rhs._attack_damage;
-	}
+	this->_name = rhs.getName();
+	this->_hit_point = rhs.getPv();
+	this->_energy_point = rhs.getEnergy();
+	this->_attack_damage = rhs.getAttack();
 	return (*this);
 }

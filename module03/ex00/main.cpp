@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 00:16:53 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/21 19:15:22 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 01:46:14 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 int main(void)
 {
+	{
+		ClapTrap Boby = ClapTrap("Bob");
+		ClapTrap Bob = Boby;
+	}
+
+	srand(time(NULL));
 	std::cout << "First test : Energy point" << std::endl << std::endl;
 	{
 		ClapTrap John("John");
@@ -34,7 +40,6 @@ int main(void)
 	std::cout << std::endl << "Second test : Health point" << std::endl << std::endl;
 	{
 		ClapTrap Trap;
-		srand(time(NULL));
 		int health = _hit_point;
 		for (int i = 0; i < 10; i++)
 		{
