@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:24:41 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 01:17:53 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:21:42 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 Animal::Animal()
 {
 	std::cout << "Constructor Animal" << std::endl;
-	type = "Unknown animal";
+	_type = "Unknown animal";
 }
 
 Animal::Animal( const Animal & src )
 {
 	std::cout << "Constructor copy Animal" << std::endl;
-	*this = src;
+	_type = src.getType();
 }
 
 /*
@@ -43,10 +43,7 @@ Animal::~Animal()
 
 Animal &				Animal::operator=( Animal const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 
@@ -61,7 +58,7 @@ Animal &				Animal::operator=( Animal const & rhs )
 */
 
 std::string	Animal::getType(void) const{
-	return (type);
+	return (_type);
 }
 
 void	Animal::makeSound(void) const{

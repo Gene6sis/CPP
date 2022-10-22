@@ -7,13 +7,12 @@
 Dog::Dog()
 {
 	std::cout << "Constructor Dog" << std::endl;
-	type = "Dog";
+	_type = "Dog";
 }
 
-Dog::Dog( const Dog & src )
+Dog::Dog( const Dog & src ) : Animal(src)
 {
 	std::cout << "Constructor copy Dog" << std::endl;
-	*this = src;
 }
 
 /*
@@ -31,10 +30,7 @@ Dog::~Dog()
 
 Dog &				Dog::operator=( Dog const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 
@@ -49,7 +45,7 @@ Dog &				Dog::operator=( Dog const & rhs )
 */
 
 void	Dog::makeSound(void) const{
-	std::cout << "Dog sound" << std::endl;
+	std::cout << "Waouff" << std::endl;
 }
 
 /*

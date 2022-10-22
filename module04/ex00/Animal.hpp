@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:24:36 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 01:12:04 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:21:29 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Animal
 		virtual std::string	getType(void) const;
 
 	protected : 
-		std::string type;
+		std::string _type;
 
 	private:
 
