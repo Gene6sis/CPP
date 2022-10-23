@@ -60,10 +60,10 @@ void		RobotomyRequestForm::executed() const {
 	// srand(time(NULL));
 	if (rand() % 2)
 	{
-		std::cout << _target << " robotomy failed" << std::endl;
+		std::cout << "bzzzzz " << _target << " robotomy failed" << std::endl;
 		return ;//echec
 	}
-	std::cout << _target << " has been robotomized" << std::endl;
+	std::cout << "bzzzzz " << _target << " has been robotomized" << std::endl;
 }
 
 /*
