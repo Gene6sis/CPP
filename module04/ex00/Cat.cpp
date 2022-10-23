@@ -7,13 +7,12 @@
 Cat::Cat()
 {
 	std::cout << "Constructor Cat" << std::endl;
-	type = "Cat";
+	_type = "Cat";
 }
 
-Cat::Cat( const Cat & src )
+Cat::Cat( const Cat & src ) : Animal(src)
 {
 	std::cout << "Constructor copy Cat" << std::endl;
-	*this = src;
 }
 
 /*
@@ -31,10 +30,7 @@ Cat::~Cat()
 
 Cat &				Cat::operator=( Cat const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 
@@ -49,7 +45,7 @@ Cat &				Cat::operator=( Cat const & rhs )
 */
 
 void	Cat::makeSound(void) const{
-	std::cout << "Cat sound" << std::endl;
+	std::cout << "Miaou" << std::endl;
 }
 
 /*

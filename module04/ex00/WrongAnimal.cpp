@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:24:41 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 01:03:17 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:24:59 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 WrongAnimal::WrongAnimal()
 {
 	std::cout << "Constructor WrongAnimal" << std::endl;
-	type = "Unknown WrongAnimal";
+	_type = "Unknown WrongAnimal";
 }
 
 WrongAnimal::WrongAnimal( const WrongAnimal & src )
 {
 	std::cout << "Constructor copy WrongAnimal" << std::endl;
-	*this = src;
+	_type = src.getType();
 }
 
 /*
@@ -43,10 +43,7 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 
@@ -61,7 +58,7 @@ WrongAnimal &				WrongAnimal::operator=( WrongAnimal const & rhs )
 */
 
 std::string	WrongAnimal::getType(void) const{
-	return (type);
+	return (_type);
 }
 
 void	WrongAnimal::makeSound(void) const{

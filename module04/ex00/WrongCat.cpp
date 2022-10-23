@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 01:05:22 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 01:05:22 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:25:43 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,12 @@
 WrongCat::WrongCat()
 {
 	std::cout << "Constructor WrongCat" << std::endl;
-	type = "WrongCat";
+	_type = "WrongCat";
 }
 
-WrongCat::WrongCat( const WrongCat & src )
+WrongCat::WrongCat( const WrongCat & src ) : WrongAnimal(src)
 {
 	std::cout << "Constructor copy WrongCat" << std::endl;
-	*this = src;
 }
 
 /*
@@ -43,10 +42,7 @@ WrongCat::~WrongCat()
 
 WrongCat &				WrongCat::operator=( WrongCat const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 

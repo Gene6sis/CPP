@@ -1,9 +1,9 @@
-SRCS			=	main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS			=	main.cpp Span.cpp
 OBJS			= 	${SRCS:.cpp=.o}
-NAME			= 	frag
+NAME			= 	template
 CC				=	c++
 RM				=	rm -f
-CFLAGS			=	-Wall -Wextra -Werror -std=c++98
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -g
 
 all:		$(NAME)
 
@@ -21,6 +21,5 @@ fclean:		clean
 
 re:			fclean
 			make all
-
 
 .PHONY:		all clean fclean re

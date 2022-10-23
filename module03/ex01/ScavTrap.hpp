@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 00:52:20 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/02 19:31:59 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/21 23:34:30 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : ClapTrap {
+class ScavTrap : public ClapTrap {
 
 	public :
 		ScavTrap(void);
