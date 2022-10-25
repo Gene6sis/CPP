@@ -6,6 +6,13 @@
 
 Intern::Intern()
 {
+	functionPtr[0] = &Intern::makePardon;
+	functionPtr[1] = &Intern::makeTree;
+	functionPtr[2] = &Intern::makeRobotomy;
+
+	formName[0] = "presidential pardon";
+	formName[1] = "shrubbery creation";
+	formName[2] = "robotomy request";
 }
 
 Intern::Intern( const Intern & src )
@@ -29,7 +36,13 @@ Intern::~Intern()
 
 Intern &				Intern::operator=( Intern const & rhs )
 {
-	(void)rhs;
+	functionPtr[0] = rhs.functionPtr[0];
+	functionPtr[1] = rhs.functionPtr[1];
+	functionPtr[2] = rhs.functionPtr[2];
+
+	formName[0] = rhs.formName[0];
+	formName[1] = rhs.formName[1];
+	formName[2] = rhs.formName[2];
 	return *this;
 }
 
@@ -50,13 +63,14 @@ const char* Intern::NotFound::what() const throw()
 }
 
 Form	*Intern::makeForm(std::string form_name, std::string name) {
-	if (!form_name.compare("robotomy request"))
-		return (new RobotomyRequestForm(name));
-	else if (!form_name.compare("presidential pardon"))
-		return (new PresidentialPardonForm(name));
-	else if (!form_name.compare("shrubbery creation"))
-		return (new ShrubberyCreationForm(name));
-	std::cout << "Wrong Form name" << std::endl;
+	for (int i = 0; i < 3; i++)
+	{
+		if (form_name == formName[i])
+		{
+			std::cout << "Intern creates " << formName[i] << " form" << std::endl;
+			return ((this->*functionPtr[i])(name));
+		}
+	}
 	throw Intern::NotFound();
 }
 
@@ -66,5 +80,15 @@ Form	*Intern::makeForm(std::string form_name, std::string name) {
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+
+Form	*Intern::makePardon(std::string target) {
+	return (new PresidentialPardonForm(target));
+}
+Form	*Intern::makeTree(std::string target){
+	return (new ShrubberyCreationForm(target));
+}
+Form	*Intern::makeRobotomy(std::string target){
+	return (new RobotomyRequestForm(target));
+}
 
 /* ************************************************************************** */

@@ -26,9 +26,14 @@ class Intern
 		};
 
 	private:
+		Form	*makePardon(std::string target);
+		Form	*makeTree(std::string target);
+		Form	*makeRobotomy(std::string target);
+		Form	*(Intern::*functionPtr[3])(std::string target);
+		std::string	formName[3];
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Intern const & i );
+// std::ostream &			operator<<( std::ostream & o, Intern const & i );
 
 #endif /* ********************************************************** INTERN_H */
