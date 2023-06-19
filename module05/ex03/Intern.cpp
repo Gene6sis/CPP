@@ -17,7 +17,7 @@ Intern::Intern()
 
 Intern::Intern( const Intern & src )
 {
-	(void)src;
+	*this = src;
 }
 
 

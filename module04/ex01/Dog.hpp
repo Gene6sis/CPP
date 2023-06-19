@@ -18,10 +18,11 @@ class Dog : public Animal
 
 		Dog &		operator=( Dog const & rhs );
 	
-		void makeSound(void) const;
+		void		makeSound(void) const;
+		Brain		*getBrain() const;
 
 	private:
-		Brain *brain;
+		Brain *_brain;
 
 };
 

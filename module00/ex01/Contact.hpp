@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:04:45 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/20 22:21:27 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:31:48 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <iostream>
 
 class Contact{
+
+public:
 
 	public :
 		Contact(void);

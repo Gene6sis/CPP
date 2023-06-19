@@ -23,7 +23,7 @@ class WrongAnimal
 
 		WrongAnimal();
 		WrongAnimal( WrongAnimal const & src );
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
 		WrongAnimal &		operator=( WrongAnimal const & rhs );
 
@@ -31,7 +31,7 @@ class WrongAnimal
 		std::string	getType(void) const;
 
 	protected : 
-		std::string type;
+		std::string _type;
 
 	private:
 

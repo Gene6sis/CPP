@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 01:04:46 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 03:18:47 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/05 01:04:46 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,4 @@ class WrongCat : public WrongAnimal
 
 // std::ostream &			operator<<( std::ostream & o, WrongCat const & i );
 
-#endif /* ************************************************************* WRONGCAT_H */
+#endif /* ************************************************************* WrongCat_H */

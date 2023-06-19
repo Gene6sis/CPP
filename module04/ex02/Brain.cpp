@@ -12,9 +12,9 @@ Brain::Brain()
 Brain::Brain( const Brain & src )
 {
 	std::cout << "Constructor copy Brain" << std::endl;
-	*this = src;
+	for(int i = 0; i < 100; i++)
+		_ideas[i] = src.getIdea(i);
 }
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -25,24 +25,23 @@ Brain::~Brain()
 	std::cout << "Destructor Brain" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-void	copy_ideas(std::string *dest, const std::string *src)
-{
-	for (int i = 0; i < 100; i++)
-		dest[i] = src[i];
+std::string Brain::getIdea(int i) const {
+	return (_ideas[i]);
 }
 
 Brain &				Brain::operator=( Brain const & rhs )
 {
-	if ( this != &rhs )
-	{
-		copy_ideas(ideas, rhs.ideas);
-	}
+	for (int i = 0; i < 100; i++)
+		_ideas[i] = rhs.getIdea(i);
 	return *this;
+}
+
+void	Brain::setIdea(int i, std::string idea) {
+	_ideas[i] = idea;
 }
 
 // std::ostream &			operator<<( std::ostream & o, Brain const & i )

@@ -15,8 +15,7 @@ class MutantStack: public std::stack<T> // std::stack< int, std::deque<int> > te
 {                                       // et this->c(container) permet dacceder au fonction du deque
     public:
         MutantStack(): std::stack<T>() {};
-        MutantStack(MutantStack<T> const& mutantStack) { 
-            *this = mutantStack; 
+        MutantStack(MutantStack<T> const& mutantStack) : std::stack<T>(mutantStack){
         }
         ~MutantStack() { };
 

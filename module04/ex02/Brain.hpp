@@ -15,11 +15,14 @@ class Brain
 
 		Brain &		operator=( Brain const & rhs );
 
+		std::string getIdea(int i) const;
+		void setIdea(int i, std::string idea);
+
 	protected :
-		std::string ideas[100];
+		std::string _ideas[100];
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Brain const & i );
+// std::ostream &			operator<<( std::ostream & o, Brain const & i );
 
 #endif /* *********************************************************** BRAIN_H */

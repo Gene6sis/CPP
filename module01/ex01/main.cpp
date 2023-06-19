@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 20:44:19 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/22 21:09:17 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:15:11 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	int nb = 15;
+	int nb = -14;
 	Zombie *zombie = zombieHorde(nb, "Bob");
 	for (int i = 0; i < nb; i++)
 	{

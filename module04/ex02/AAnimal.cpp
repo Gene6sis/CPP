@@ -1,56 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:24:41 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 01:02:48 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:21:42 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Animal::Animal()
+AAnimal::AAnimal()
 {
-	std::cout << "Constructor Animal" << std::endl;
-	type = "Unknown animal";
+	std::cout << "Constructor AAnimal" << std::endl;
+	_type = "Unknown Aanimal";
 }
 
-Animal::Animal( const Animal & src )
+AAnimal::AAnimal( const AAnimal & src )
 {
-	std::cout << "Constructor copy Animal" << std::endl;
-	*this = src;
+	std::cout << "Constructor copy AAnimal" << std::endl;
+	_type = src.getType();
 }
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Destructor Animal" << std::endl;
+	std::cout << "Destructor AAnimal" << std::endl;
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Animal &				Animal::operator=( Animal const & rhs )
+AAnimal &				AAnimal::operator=( AAnimal const & rhs )
 {
-	if ( this != &rhs )
-	{
-		this->type = rhs.type;
-	}
+	this->_type = rhs.getType();
 	return *this;
 }
 
-// std::ostream &			operator<<( std::ostream & o, Animal const & i )
+// std::ostream &			operator<<( std::ostream & o, AAnimal const & i )
 // {
 // 	//o << "Value = " << i.getValue();
 // 	return o;
@@ -60,11 +57,11 @@ Animal &				Animal::operator=( Animal const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string	Animal::getType(void) const{
-	return (type);
+std::string	AAnimal::getType(void) const{
+	return (_type);
 }
 
-void	Animal::makeSound(void) const{
+void	AAnimal::makeSound(void) const{
 	std::cout << "Making sound" << std::endl;
 }
 

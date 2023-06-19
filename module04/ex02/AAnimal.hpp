@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 00:24:36 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/10/05 03:46:43 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:10:37 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 # include <iostream>
 # include <string>
 
-class Animal
+class AAnimal
 {
 
 	public:
 
-		Animal();
-		Animal( Animal const & src );
-		virtual ~Animal();
+		AAnimal();
+		AAnimal( AAnimal const & src );
+		virtual ~AAnimal();
 
-		Animal &		operator=( Animal const & rhs );
+		AAnimal &		operator=( AAnimal const & rhs );
 
 		virtual void makeSound(void) const = 0;
 		virtual std::string	getType(void) const;
 
 	protected : 
-		std::string type;
+		std::string _type;
 
 	private:
 
 };
 
-// std::ostream &			operator<<( std::ostream & o, Animal const & i );
+// std::ostream &			operator<<( std::ostream & o, AAnimal const & i );
 
-#endif /* ********************************************************** ANIMAL_H */
+#endif /* ********************************************************** AANIMAL_H */

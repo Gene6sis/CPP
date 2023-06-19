@@ -6,7 +6,7 @@
 /*   By: adben-mc <adben-mc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:50:08 by adben-mc          #+#    #+#             */
-/*   Updated: 2022/09/24 00:11:53 by adben-mc         ###   ########.fr       */
+/*   Updated: 2022/10/16 18:27:03 by adben-mc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class HumanA {
 
 	private : 
 		std::string _name;
-		Weapon		*_weapon;
+		Weapon		&_weapon;
 
 };
 
